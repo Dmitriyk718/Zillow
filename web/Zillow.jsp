@@ -64,7 +64,7 @@
                  if (result1.getDataAsObject(zillow.realestateservice.chart.Chart.class) instanceof zillow.realestateservice.chart.Chart) {
                  zillow.realestateservice.chart.Chart result1Obj = result1.getDataAsObject(zillow.realestateservice.chart.Chart.class);  
                  }
-                
+                 
                  charResult = result1.getDataAsString();
                 
                  JSONObject json2 = XML.toJSONObject(charResult);
@@ -76,8 +76,15 @@
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-            
+            /*
             out.println("The estimated selling price for <br/> Address: " +a+" "+z+ "<br/> is = $" +estValue+ " as of "+estDate );
+            out.println("<br/> <img src="+imgUrl+">");
+            */
+            
+            out.println("<table border='1' style='width:30%'>"
+                    + "<tr><td>Address:</td><td>"+a+" "+z+"</td></tr>"
+                    + "<tr><td>Estimated Value:</td><td>$"+estValue+"</td></tr>"
+                    + "<tr><td>Last Updated:</td><td>"+estDate+"</td></tr>");
             out.println("<br/> <img src="+imgUrl+">");
         %>
         
